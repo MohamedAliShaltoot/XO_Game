@@ -12,23 +12,27 @@ class LoginScreen extends StatelessWidget {
     TextEditingController player2=TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 6, 56, 97),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 3, 27, 47),
         title: const Text(
           "Login",
           style: TextStyle(
-              fontWeight: FontWeight.w400, fontSize: 30, color: Colors.white),
+              fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white),
         ),
       ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
                 onChanged: (value){
                   player1 = value;
                 },
                 decoration: InputDecoration(
+                  label: const Text("Player One",style:TextStyle(color: Color.fromARGB(255, 11, 1, 1),fontWeight: FontWeight.bold)),
                   hintText:"Player One",
                   hintStyle: const TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
@@ -48,8 +52,10 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20,),
                TextField(
+                
                 controller:player2 ,
                 decoration: InputDecoration(
+                  label: const Text("Player Two",style:TextStyle(color: Color.fromARGB(255, 11, 1, 1),fontWeight: FontWeight.bold) ,),
                   hintText:"Player Two",
                   hintStyle: const TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
