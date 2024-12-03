@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:xo_game/elevatedbutton.dart';
 import 'package:xo_game/players_model.dart';
 
@@ -29,10 +30,15 @@ class _XoGameScreenState extends State<XoGameScreen> {
           centerTitle: true,
           foregroundColor: const Color.fromARGB(255, 223, 222, 217),
           backgroundColor: const Color.fromARGB(255, 6, 37, 62),
-          title: const Text(
-            "XO Game",
-            style: TextStyle(
-                fontWeight: FontWeight.w400, fontSize: 30, color: Color.fromARGB(255, 249, 248, 248)),
+          title: Shimmer.fromColors(
+            
+            baseColor: Colors.red,
+            highlightColor: Colors.amber,
+            child: const Text(
+              "XO Game",
+              style: TextStyle(
+                  fontWeight: FontWeight.w400, fontSize: 30, ),
+            ),
           ),
         ),
         body: Column(
