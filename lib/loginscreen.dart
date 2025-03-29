@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 3, 27, 47),
         title: const Text(
-          "Login",
+          "Players Name",
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white),
         ),

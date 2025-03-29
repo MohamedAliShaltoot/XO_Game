@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "435881648319",
+    "project_id": "xogame-1828c",
+    "storage_bucket": "xogame-1828c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435881648319:android:ee840785b863c6c28d660a",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtLqaCCOQghgyO5pYElCQEz-3S3zZintw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435881648319:android:f44bc4e2268894c78d660a",
+        "android_client_info": {
+          "package_name": "com.example.xo_game"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtLqaCCOQghgyO5pYElCQEz-3S3zZintw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
