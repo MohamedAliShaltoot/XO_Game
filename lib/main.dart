@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:xo_game/fire_base%20feature/login_screen.dart';
 import 'package:xo_game/firebase_options.dart';
+import 'package:xo_game/xo_game_screen.dart';
 
 
 void main() async {
@@ -25,14 +26,14 @@ class XOGAME extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-     // initialRoute: LoginScreen.routeName ,
+     initialRoute: LoginScreenn.routeName ,
 
-//       routes: {
-// LoginScreen.routeName:(context) => const LoginScreen(),
-// XoGameScreen.routeName:(context) => const XoGameScreen()
+      routes: {
+LoginScreenn.routeName:(context) => const LoginScreenn(),
+XoGameScreen.routeName:(context) => const XoGameScreen()
 
-//       },
-home: const LoginScreenn(),
+      },
+//home: const LoginScreenn(),
     );
   }
 }

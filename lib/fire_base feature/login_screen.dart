@@ -7,6 +7,7 @@ import 'package:xo_game/loginscreen.dart';
 
 
 class LoginScreenn extends StatefulWidget {
+  static const String routeName = "login";
   const LoginScreenn({super.key});
 
   @override
@@ -15,6 +16,7 @@ class LoginScreenn extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreenn> {
+  
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final AuthService _authService = AuthService();
