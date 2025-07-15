@@ -4,11 +4,10 @@ import 'package:xo_game/fire_base%20feature/login_screen.dart';
 import 'package:xo_game/firebase_options.dart';
 import 'package:xo_game/xo_game_screen.dart';
 
-
 void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
   runApp(const XOGAME());
 }
 
@@ -22,16 +21,14 @@ class XOGAME extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'XOGAME',
       theme: ThemeData(
-        
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-     initialRoute: LoginScreenn.routeName ,
+      initialRoute: LoginScreenn.routeName,
 
       routes: {
-LoginScreenn.routeName:(context) => const LoginScreenn(),
-XoGameScreen.routeName:(context) => const XoGameScreen()
-
+        LoginScreenn.routeName: (context) => const LoginScreenn(),
+        XoGameScreen.routeName: (context) => const XoGameScreen()
       },
 //home: const LoginScreenn(),
     );

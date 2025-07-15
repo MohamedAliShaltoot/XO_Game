@@ -5,7 +5,6 @@ import 'package:xo_game/fire_base%20feature/auth_service.dart';
 import 'package:xo_game/fire_base%20feature/test_screen.dart';
 import 'package:xo_game/loginscreen.dart';
 
-
 class LoginScreenn extends StatefulWidget {
   static const String routeName = "login";
   const LoginScreenn({super.key});
@@ -16,7 +15,6 @@ class LoginScreenn extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreenn> {
-  
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final AuthService _authService = AuthService();
@@ -25,8 +23,8 @@ class _LoginScreenState extends State<LoginScreenn> {
     var user = await _authService.signIn(
         emailController.text, passwordController.text);
     if (user != null) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const LoginScreen()));
     } else {
       ScaffoldMessenger.of(context)
           .showSnackBar(const SnackBar(content: Text("Login Failed!")));
@@ -51,9 +49,18 @@ class _LoginScreenState extends State<LoginScreenn> {
             const SizedBox(height: 20),
             ElevatedButton(onPressed: login, child: const Text("Login")),
             TextButton(
-                onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const TestScreen())),
-                child: const Text("Don't have an account? Sign up")),
+                style: TextButton.styleFrom(
+                    foregroundColor: Colors.blue,
+                    textStyle: const TextStyle(fontSize: 16),
+                    backgroundColor: Colors.black),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TestScreen())),
+                child: const Text(
+                  "Don't have an account? Sign up",
+                  // style: TextStyle(color: Color.fromARGB(0, 8, 136, 215)),
+                )),
           ],
         ),
       ),
