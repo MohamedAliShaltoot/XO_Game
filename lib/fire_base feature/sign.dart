@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xo_game/fire_base%20feature/auth_service.dart';
 //import 'package:xo_game/fire_base%20feature/test_screen.dart';
-import 'package:xo_game/loginscreen.dart';
+import 'package:xo_game/xo_features/xo_screens/loginscreen.dart';
 
 
 class SignupScreen extends StatefulWidget {

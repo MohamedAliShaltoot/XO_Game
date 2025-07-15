@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:xo_game/fire_base%20feature/login_screen.dart';
 import 'package:xo_game/firebase_options.dart';
-import 'package:xo_game/xo_game_screen.dart';
+import 'package:xo_game/xo_features/xo_screens/xo_game_screen.dart';
 
 void main() async {
   await Firebase.initializeApp(

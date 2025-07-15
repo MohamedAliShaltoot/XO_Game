@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:xo_game/players_model.dart';
-import 'package:xo_game/xo_game_screen.dart';
+import 'package:xo_game/xo_features/models/players_model.dart';
+import 'package:xo_game/xo_features/xo_screens/xo_game_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String routeName = "login";

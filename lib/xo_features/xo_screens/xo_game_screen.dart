@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:xo_game/elevatedbutton.dart';
-import 'package:xo_game/players_model.dart';
+import 'package:xo_game/xo_features/models/players_model.dart';
 
 class XoGameScreen extends StatefulWidget {
   static const String routeName='XoGame';
