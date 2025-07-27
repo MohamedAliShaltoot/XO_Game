@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:xo_game/core/service/fire_base_functions.dart';
 
 class CustomCardWidget extends StatelessWidget {
   const CustomCardWidget({
@@ -27,7 +28,9 @@ class CustomCardWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
             ),
             SlidableAction(
-              onPressed: (context) {},
+              onPressed: (context) {
+              //  FireBaseFunctions().mainFunction();
+              },
               backgroundColor: Colors.blueGrey,
               foregroundColor: Colors.black,
               icon: Icons.edit,
