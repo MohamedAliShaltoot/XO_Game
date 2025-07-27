@@ -16,20 +16,22 @@ class AddTaskWidget extends StatelessWidget {
           child: Column(
             children: [
               const Text(
-                'Add your Task',
+                'Add Task',
                 style: TextStyle(fontSize: 24),
               ),
               const SizedBox(height: 20),
-              const TextField(
-                style: TextStyle(),
-                decoration: InputDecoration(
+              TextField(
+                controller: provider.titleController,
+                style: const TextStyle(),
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Task Title',
                 ),
               ),
               const SizedBox(height: 20),
-              const TextField(
-                decoration: InputDecoration(
+              TextField(
+                controller: provider.descriptionController,
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Task Description',
                 ),
@@ -63,7 +65,9 @@ class AddTaskWidget extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // Logic to add the task
+                  provider.addTask();
+                  provider.titleController.clear();
+                  provider.descriptionController.clear();
                   Navigator.pop(context);
                 },
                 child: const Text('Add Task'),
