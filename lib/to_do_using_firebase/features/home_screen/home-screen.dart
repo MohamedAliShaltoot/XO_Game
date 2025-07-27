@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:xo_game/to_do_using_firebase/features/home_screen/manager/provider/home_provider.dart';
+import 'package:xo_game/to_do_using_firebase/features/tasks_screen/widgets/add_task_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/home';
@@ -25,7 +26,26 @@ class HomeScreen extends StatelessWidget {
                   side: const BorderSide(color: Colors.white, width: 3.4),
                   borderRadius: BorderRadius.circular(360),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  //show modal bottom sheet to user
+                  showModalBottomSheet(
+                    showDragHandle: true,
+                    context: context,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                    ),
+                    builder: (context) {
+                      return SizedBox(
+                        height: 300,
+                        child: ChangeNotifierProvider.value(
+                            value: provider, child: const AddTaskWidget()),
+                      );
+                    },
+                  );
+                },
                 child: const Icon(Icons.add),
               ),
               bottomNavigationBar: ClipRRect(

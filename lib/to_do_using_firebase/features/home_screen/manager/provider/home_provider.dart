@@ -5,16 +5,20 @@ import 'package:xo_game/to_do_using_firebase/features/tasks_screen/task_screen.d
 class HomeProvider extends ChangeNotifier {
   int selectedIndex = 0;
   DateTime selectedDate = DateTime.now();
-  List<Widget> screens = [
-    const TaskScreen(),
-    const SettingsScreen()
-  ];
+  DateTime selectedDatePicker = DateTime.now();
+  List<Widget> screens = [const TaskScreen(), const SettingsScreen()];
   void setIndex(int index) {
     selectedIndex = index;
     notifyListeners();
   }
+
   void setDate(DateTime date) {
     selectedDate = date;
+    notifyListeners();
+  }
+
+  void setDatePicker(DateTime date) {
+    selectedDatePicker = date;
     notifyListeners();
   }
 }
