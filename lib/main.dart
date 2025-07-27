@@ -6,7 +6,6 @@ import 'package:xo_game/firebase_options.dart';
 import 'package:xo_game/to_do_using_firebase/features/home_screen/home-screen.dart';
 import 'package:xo_game/to_do_using_firebase/features/home_screen/spalsh_screen.dart';
 
-
 void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -34,5 +33,3 @@ class XOGAME extends StatelessWidget {
     );
   }
 }
-
-
