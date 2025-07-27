@@ -2,6 +2,8 @@ import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:xo_game/to_do_using_firebase/features/home_screen/manager/provider/home_provider.dart';
+import 'package:xo_game/to_do_using_firebase/features/tasks_screen/widgets/add_task_widget.dart';
+import 'package:xo_game/to_do_using_firebase/features/tasks_screen/widgets/custom_card_widget.dart';
 
 class TaskScreen extends StatelessWidget {
   const TaskScreen({super.key});
@@ -34,25 +36,49 @@ class TaskScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                EasyInfiniteDateTimeLine(
-                  showTimelineHeader: false,
-                  dayProps: const EasyDayProps(
-                    todayHighlightColor: Colors.amberAccent,
-                    todayHighlightStyle: TodayHighlightStyle.withBackground,
-                    inactiveDayStyle: DayStyle(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                GestureDetector(
+                  onDoubleTap: () {
+                    showModalBottomSheet(
+                      showDragHandle: true,
+                      context: context,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20),
+                        ),
+                      ),
+                      builder: (context) {
+                        return SizedBox(
+                          height: 300,
+                          child: ChangeNotifierProvider.value(
+                              value: provider, child: const AddTaskWidget()),
+                        );
+                      },
+                    );
+                  },
+                  child: EasyInfiniteDateTimeLine(
+                    showTimelineHeader: false,
+                    dayProps: const EasyDayProps(
+                      todayHighlightColor: Colors.amberAccent,
+                      todayHighlightStyle: TodayHighlightStyle.withBackground,
+                      inactiveDayStyle: DayStyle(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
                       ),
                     ),
+                    onDateChange: provider.setDate,
+                    firstDate:
+                        DateTime.now().subtract(const Duration(days: 365)),
+                    focusDate: provider.selectedDate,
+                    lastDate: DateTime.now().add(const Duration(days: 365)),
                   ),
-                  onDateChange: provider.setDate,
-                  firstDate: DateTime.now().subtract(const Duration(days: 365)),
-                  focusDate: provider.selectedDate,
-                  lastDate: DateTime.now().add(const Duration(days: 365)),
                 )
               ],
             ),
+            const SizedBox(height: 80),
+            const CustomCardWidget(),
           ],
         );
       },
